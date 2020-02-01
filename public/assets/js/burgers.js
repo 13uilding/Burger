@@ -1,4 +1,5 @@
 // Make sure we wait to attach our handlers until the DOM is fully lo aded.
+var numberOfBurgersEaten = 0;
 $(function() {
   $(".change-devour").on("click", function(event) {
     var id = $(this).data("id");
@@ -45,16 +46,19 @@ $(function() {
 
   $(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
-
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(
       function() {
         console.log("deleted burger", id);
+        numberOfBurgersEaten++;
+        let poopOpacity = String(numberOfBurgersEaten * 0.05);
+        $(".poop").attr("opacity", poopOpacity + "%");
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 });
+

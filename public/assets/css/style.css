@@ -21,5 +21,20 @@ li {
 img {
   max-width: 300px;
   height: auto;
-  
+  border: yellow solid 2px;
+
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+}
+
+.poop {
+  opacity: 0%;
+}
+
+h1 {
+  text-align: center;
+  color: wheat;
 }
