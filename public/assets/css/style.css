@@ -36,5 +36,16 @@ img {
 
 h1 {
   text-align: center;
-  color: wheat;
+}
+.form-group {
+  background-color: rgb(248, 129, 108);
+  padding: 5px;
+}
+body {
+  background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  min-height: 100vh;
+}
+.column.is-one-third {
+  border-top: black dashed 2px;
 }

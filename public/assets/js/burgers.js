@@ -21,6 +21,11 @@ $(function() {
       }
     );
   });
+//   <div class="form-group">
+//   <label for="devoured">Devoured?</label><br>
+//   <input type="radio" name="devoured" value="1">Devoured!<br>
+//   <input type="radio" name="devoured" value="0" checked>Waiting!
+// </div>
 
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
@@ -28,7 +33,7 @@ $(function() {
 
     var newBurger = {
       burger_name: $("#burger").val().trim(),
-      devoured: $("[name=devoured]:checked").val()
+      devoured: "0"
     };
     console.log("adding burger");
     // Send the POST request.
@@ -43,7 +48,7 @@ $(function() {
       }
     );
   });
-
+  
   $(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
     // Send the DELETE request.
