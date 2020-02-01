@@ -17,3 +17,9 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+img {
+  max-width: 300px;
+  height: auto;
+  
+}

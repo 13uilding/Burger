@@ -2,10 +2,10 @@
 $(function() {
   $(".change-devour").on("click", function(event) {
     var id = $(this).data("id");
-    var newState = $(this).data("newstate");
+    var state = $(this).data("state");
 
     var newstate = {
-      devoured: newState
+      devoured: !state
     };
 
     // Send the PUT request.

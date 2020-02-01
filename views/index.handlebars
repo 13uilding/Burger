@@ -1,25 +1,40 @@
 <h1>Burgers!</h1>
 
-<h2>Burgers that waiting to be devoured.</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block eaten=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have been devoured.</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block eaten=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
+<div class="row">
+ <div class="column-4">
+  <h2>Burgers that waiting to be devoured.</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          <li>
+            {{burger_name}}
+            <button class="change-devour" data-id="{{this.id}}" data-state="false">EAT ME!</button>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>   
+  </div>
+  <div class="column-4">
+    <div class="imgWrap">
+      <img src="/assets/imgs/burger.png">
+    </div>
+  </div>
+  <div class="column-4">
+    <h2>Burgers that have been devoured.</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          {{burger_name}}
+          <button class="change-devour" data-id="{{this.id}}" data-state="true">REGURGITATE!</button>
+          <button class="delete-burger" data-id="{{this.id}}">DIGEST!</button>
+        </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+ 
+</div>
 <h2>Add a burger</h2>
 <form class="create-form">
 
