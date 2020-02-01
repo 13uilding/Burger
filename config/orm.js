@@ -44,10 +44,7 @@ var orm = {
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
-      if (err) {
-        console.log(err);
-        cb("testing")
-      }
+      if (err) throw err;
       cb(result);
     });
   },
