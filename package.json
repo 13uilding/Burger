@@ -1,10 +1,11 @@
 {
-  "name": "Burger",
+  "name": "burger",
   "version": "1.0.0",
   "description": "Eating yummy burgers",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "test": "node server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,6 @@
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.7.2",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {}
 }

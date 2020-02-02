@@ -3,7 +3,7 @@ var mysql = require("mysql");
 
 var connection = mysql.createConnection({
   host: "localhost",
-  port: process.env.PORT || 3306,
+  port: 3306,
   user: "root",
   password: "Bqlbajaboy3!",
   database: "burgers_db"
@@ -12,8 +12,18 @@ var connection = mysql.createConnection({
 // Make connection.
 connection.connect(function(err) {
   if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
+    console.log("Couldn't connect to localhost. Attempting JAWSDB...")
+    connection = mysql.createConnection({
+      use_env_variable: "JAWSDB_URL",
+      dialect: "mysql"
+    });
+    connection.connect(function(err) {
+      if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+      }
+      console.log("connected as id" + connection.threadId)
+    })
   }
   console.log("connected as id " + connection.threadId);
 });
