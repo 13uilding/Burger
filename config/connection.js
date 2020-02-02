@@ -15,7 +15,6 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(localConnection);
 };
 
-var connection = mysql.createConnection(localConnection);
 connection.connect();
 
 module.exports = connection;
