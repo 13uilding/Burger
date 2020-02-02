@@ -9,7 +9,6 @@ var localConnection = {
   password: "Bqlbajaboy3!",
   database: "burgers_db"
 }
-console.log("YOUR CURRENT PROCESS>ENV>JAWSDB_URL IS: " + process.env.JAWSDB_URL);
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
